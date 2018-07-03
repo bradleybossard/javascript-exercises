@@ -12,8 +12,12 @@
  * anagrams('Hi there', 'Bye there') === false
  */
 
+function filterCaseSort(input) {
+  return input.replace(/\W/g, '').toLowerCase().split('').sort().join('');
+}
+
 function anagrams(stringA, stringB) {
-   
+  return filterCaseSort(stringA) === filterCaseSort(stringB);
 }
 
 module.exports = anagrams;
